@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skein rootNode="node-0x02B16198" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+  <generator>Inform 7 for Windows</generator>
+  <activeNode nodeId="node-0x02B258F0"/>
+  <item nodeId="node-0x02B16198">
+    <command xml:space="preserve">- start -</command>
+    <result xml:space="preserve">The Vault&#x000A;An Interactive Fiction by Brandon Cooper&#x000A;Release 1 / Serial number 150416 / Inform 7 build 6L38 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Main Tunnel Entrance&#x000A;You enter a dusty interior, dimly lit by narrow sunshafts entering through the vault door. Next to the door lies a control panel.&#x000A;&#x000A;You hear a crackling sound from an unseen speaker above: "Get out! You are unwelcome here. Leave me to my experiments.".&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">NO</temporary>
+    <children>
+      <child nodeId="node-0x02B16678"/>
+      <child nodeId="node-0x02B1FF58"/>
+      <child nodeId="node-0x02B21460"/>
+      <child nodeId="node-0x02B21F78"/>
+      <child nodeId="node-0x02B22390"/>
+      <child nodeId="node-0x02B22400"/>
+      <child nodeId="node-0x02B221D0"/>
+      <child nodeId="node-0x02B220F0"/>
+      <child nodeId="node-0x02B222B0"/>
+      <child nodeId="node-0x02B255E0"/>
+      <child nodeId="node-0x02B25F10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B16678">
+    <command xml:space="preserve">examine vault door</command>
+    <result xml:space="preserve">You see nothing special about the vault door.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B166E8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B166E8">
+    <command xml:space="preserve">take vault door</command>
+    <result xml:space="preserve">That's fixed in place.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02B1FF58">
+    <command xml:space="preserve">examine vault</command>
+    <result xml:space="preserve">You see nothing special about the vault door.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02B21460">
+    <command xml:space="preserve">h</command>
+    <result xml:space="preserve">You're in good health&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B214D0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B214D0">
+    <command xml:space="preserve">health</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B21540"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B21540">
+    <command xml:space="preserve">h</command>
+    <result xml:space="preserve">&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B21DB8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B21DB8">
+    <command xml:space="preserve">h</command>
+    <result xml:space="preserve">&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B21E28"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B21E28">
+    <command xml:space="preserve">kj</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B21E98"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B21E98">
+    <command xml:space="preserve">j</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B21F08"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B21F08">
+    <command xml:space="preserve">h</command>
+    <result xml:space="preserve">&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02B21F78">
+    <command xml:space="preserve">health</command>
+    <result xml:space="preserve">You're in good health.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B21FE8"/>
+      <child nodeId="node-0x02B22058"/>
+      <child nodeId="node-0x02B226A0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B21FE8">
+    <command xml:space="preserve">h</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02B22058">
+    <command xml:space="preserve">Health</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02B226A0">
+    <command xml:space="preserve">health</command>
+    <result xml:space="preserve">You are beginning to feel nauseous from the health.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B22630"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B22630">
+    <command xml:space="preserve">health</command>
+    <result xml:space="preserve">You feel tired and dizzy. You should probably see a doctor&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B22160"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B22160">
+    <command xml:space="preserve">health</command>
+    <result xml:space="preserve">Your limbs shake as you stumble along. You're positively glowing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B22550"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B22550">
+    <command xml:space="preserve">health</command>
+    <result xml:space="preserve">&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B22710"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B22710">
+    <command xml:space="preserve">health</command>
+    <result xml:space="preserve">&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02B22390">
+    <command xml:space="preserve">examine self</command>
+    <result xml:space="preserve">As good-looking as ever.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B224E0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B224E0">
+    <command xml:space="preserve">examine self</command>
+    <result xml:space="preserve">As good-looking as ever.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B22470"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B22470">
+    <command xml:space="preserve">wear</command>
+    <result xml:space="preserve">(the space suit)&#x000A;You're already wearing that!&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B225C0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B225C0">
+    <command xml:space="preserve">check self</command>
+    <result xml:space="preserve">As good-looking as ever.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02B22400">
+    <command xml:space="preserve">examine key</command>
+    <result xml:space="preserve">You see nothing special about the key card.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02B221D0">
+    <command xml:space="preserve">TREE</command>
+    <result xml:space="preserve">compass (576119) &#x000A;  the north&#x000A;  the northeast&#x000A;  the northwest&#x000A;  the south&#x000A;  the southeast&#x000A;  the southwest&#x000A;  the east&#x000A;  the west&#x000A;  the up&#x000A;  the down&#x000A;  the inside&#x000A;  the outside&#x000A;(darkness object) (576151) &#x000A;(Inform Parser) (576183) &#x000A;(Inform Library) (576215) &#x000A;(property_numberspace_forcer) (576247) &#x000A;(ValuePropertyHolder_42) (576311) &#x000A;(ValuePropertyHolder_46) (576343) &#x000A;Main Tunnel Entrance (577303) &#x000A;  yourself&#x000A;  a vault door&#x000A;  a rusty control panel&#x000A;    a key card&#x000A;Antechamber (577431) &#x000A;Leader's Office (577463) &#x000A;Vault (577495) &#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02B220F0">
+    <command xml:space="preserve">examine door</command>
+    <result xml:space="preserve">A massive, weathered lead door. It may have withstood the blast, but it has definitely seen better days.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02B222B0">
+    <command xml:space="preserve">examine pane</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B22860"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B22860">
+    <command xml:space="preserve">examine panel</command>
+    <result xml:space="preserve">A rusty control panel probably used to open the vault door. It doesn't seem to be working now. On top of the panel lies a key card.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B22240"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B22240">
+    <command xml:space="preserve">take card</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B22780"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B22780">
+    <command xml:space="preserve">take key</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B227F0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B227F0">
+    <command xml:space="preserve">take key card</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B22320"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B22320">
+    <command xml:space="preserve">examine key card</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B25C70"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B25C70">
+    <command xml:space="preserve">examine panel</command>
+    <result xml:space="preserve">A rusty control panel probably used to open the vault door. It doesn't seem to be working now. On top of the panel lies a key card.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02B255E0">
+    <command xml:space="preserve">examine card key</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B25EA0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B25EA0">
+    <command xml:space="preserve">examine key car</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B25730"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B25730">
+    <command xml:space="preserve">examine key card</command>
+    <result xml:space="preserve">You can't see any such thing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x02B25F10">
+    <command xml:space="preserve">look</command>
+    <result xml:space="preserve">Main Tunnel Entrance&#x000A;You enter a dusty interior, dimly lit by narrow sunshafts entering through the vault door. Next to the door lies a control panel.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B25650"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B25650">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">You can't go that way.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B25570"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B25570">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">Antechamber&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02B258F0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02B258F0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">Main Tunnel Entrance&#x000A;You enter a dusty interior, dimly lit by narrow sunshafts entering through the vault door. Next to the door lies a control panel.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+</Skein>
