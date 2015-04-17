@@ -2,7 +2,7 @@
 
 Section 1 - Rooms
 
-Main Tunnel Entrance is a room. "You enter a dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel]."  After looking for the first time, say "You hear a crackling sound from an unseen speaker above: [quotation mark]Get out! You are unwelcome here. Leave me to my experiments.[quotation mark]."
+Main Tunnel Entrance is a room. "A large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel]."  Before looking for the first time, say "As you walk through the vault door, you hear a crackling sound from an unseen speaker above: [quotation mark]Get out! You are unwelcome here. Leave me to my experiments.[quotation mark]."
 
 Antechamber is east of Main Tunnel Entrance. "You enter an enormous circular chamber with bright fluorescent lights shining down on you."
 
@@ -31,3 +31,8 @@ Carry out health:
 	else;
 		say "Your limbs shake as you stumble along.";
 	end if; 
+	
+Section 4 - Scenes
+
+[Beginning of the game starts with this scene]
+Introduction is a scene. "After the bombs went off, the world became a wasteland where only the strongest and smartest could hope to survive. But over the years, humanity had begun to slowly come back together into scattered remnants of civilizations. As modern technology became a luxury few had, you volunteered to aid in recovering scientific artifacts from before the war. Your search led you to a recently discovered vault rumored to be a nuclear shelter for scientists..."
