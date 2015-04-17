@@ -2,7 +2,7 @@
 
 Section 1 - Rooms
 
-Main Tunnel Entrance is a room. "A large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel]. Next to the [control panel] sits half-full [bottle of vodka] and a [deck of cards]."  Before looking for the first time, say "As you walk through the vault door, you hear a crackling sound from an unseen speaker above: [quotation mark]Get out! You are unwelcome here. Leave me to my experiments.[quotation mark]."
+Main Tunnel Entrance is a room. "A large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel]. Next to the [control panel] sits a half-full [bottle of vodka] and a [deck of cards]."  Before looking for the first time, say "As you walk through the vault door, you hear a crackling sound from an unseen speaker above: [quotation mark]Get out! You are unwelcome here. Leave me to my experiments.[quotation mark]. As the buzzing stops, the blast door leading further into the vault closes shut."
 
 Antechamber is east of Main Tunnel Entrance. "You enter an enormous circular chamber with bright fluorescent lights shining down on you."
 
@@ -14,28 +14,32 @@ Vault is a region. Main Tunnel Entrance, Antechamber, and Scientist's Office are
 
 Section 2 - Objects
 
+[Main Tunnel Entrance objects]
 The vault door is scenery in the Main Tunnel Entrance. It is fixed in place. "A massive, weathered lead door. It may have withstood the war, but it has definitely seen better days."
 The control panel is scenery in the Main Tunnel Entrance. "A rusty control panel probably used to open [the vault door]. It doesn't seem to be working now. On top of the panel lies a [key card]." It is fixed in place and undescribed. It is a supporter. On the rusty control panel is a key card. It is undescribed. "This key card has to open something..."
 A dusty rag is on the control panel. The description of it is "A dusty rag that one of the guards must have left on the panel."
 A bottle of vodka is in the Main Tunnel Entrance. The description of it is "A half-full bottle of vodka. The guards had to do something to pass their time..."
-A deck of cards is in the Main Tunnel Entrance. The description of it is "Just a deck of playing cards."
+A deck of cards is in the Main Tunnel Entrance. The description of it is "A worn out deck of playing cards."
+A 
 
 Section 3 - Player
 
-The player has a number called health. health is usually 0.
+The player is in Main Tunnel Entrance.
+The player has a number called health. health is usually 100.
 Health is an action applying to nothing. Understand "health" as health.
 Carry out health:
-	if the health of the player > 900 begin;
+	if the health of the player > 90 begin;
 		say "You're in good health.";
-	else if the health of the player > 750;
+	else if the health of the player > 75;
 		say "You are beginning to feel nauseous.";
-	else if the health of the player > 500;
+	else if the health of the player > 50;
 		say "You feel tired and dizzy. You should probably see a doctor";
 	else;
 		say "Your limbs shake as you stumble along.";
 	end if; 
-When play begins:
-	move player to Main Tunnel Entrance.
+[When play begins:]
+	[wait for any key]
+	[move player to Main Tunnel Entrance.]
 	
 Section 4 - Scenes
 
