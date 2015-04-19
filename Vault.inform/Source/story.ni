@@ -2,7 +2,7 @@
 
 Section 1 - Rooms
 
-Main Tunnel Entrance is a room. "A large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel]. Next to the [control panel] sits a half-full [bottle of vodka] and a [deck of cards]."  Before looking for the first time, say "As you walk through the vault door, you hear a crackling sound from an unseen speaker above: [quotation mark]Get out! You are unwelcome here. Leave me to my experiments.[quotation mark]. As the buzzing stops, the blast door leading further into the vault closes shut."
+Main Tunnel Entrance is a room. "A large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel]. Next to the [control panel] sits a half-full [bottle of vodka] and a [deck of cards]. Above, you see an old [fire sprinkler]."
 
 [The blast door is east of Main Tunnel Entrance and west of Antechamber. The blast door is a door. The blast door is closed and not openable. The description of it is "A solid metal blast door that someone closed shut when you entered. There has to be some way to open it..."]
 
@@ -20,16 +20,15 @@ Section 2 - Objects
 
 [Main Tunnel Entrance objects]
 The vault door is scenery in the Main Tunnel Entrance. It is fixed in place. "A massive, weathered lead door. It may have withstood the war, but it has definitely seen better days."
-The control panel is scenery in the Main Tunnel Entrance. "A rusty control panel probably used to open [the vault door]. It doesn't seem to be working now. On top of the panel lies a [key card]." It is fixed in place and undescribed. It is a supporter. On the rusty control panel is a key card. It is undescribed. "This key card has to open something..."
-A dusty rag is on the control panel. The description of it is "A dusty rag that one of the guards must have left on the panel."
+The control panel is scenery in the Main Tunnel Entrance. "A rusty control panel probably used to open [the vault door]. It doesn't seem to be working now." It is fixed in place and undescribed. It is a supporter. [On the rusty control panel is a key card. It is undescribed. "This key card has to open something..."]
+A dusty rag is on the control panel. It is undescribed. The description of it is "A dusty rag that one of the guards must have left on the panel. On top of it you spot a [dusty rag]."
 A bottle of vodka is in the Main Tunnel Entrance. The description of it is "A half-full bottle of vodka. The guards had to do something to pass their time..."
 A deck of cards is in the Main Tunnel Entrance. The description of it is "A worn out deck of playing cards."
-A 
+A fire sprinkler is in the Main Tunnel Entrance. The description of it is "A fire sprinkler sitting on the low ceiling above."
 
 Section 3 - Player
 
 The player is in Main Tunnel Entrance.
-The player has a number called health. health is usually 100.
 Health is an action applying to nothing. Understand "health" as health.
 Carry out health:
 	if the health of the player > 90 begin;
@@ -50,22 +49,47 @@ Section 4 - Scenes
 [Beginning of the game starts with this scene]
 Introduction is a scene. Introduction begins when play begins. "After the bombs went off, the world became a wasteland where only the strongest and smartest could hope to survive. But over the years, humanity had begun to slowly come back together into scattered remnants of civilizations. As modern technology became a luxury few had, you volunteered to aid in recovering scientific artifacts from before the war. Your search led you to a recently discovered vault rumored to be a nuclear shelter for scientists..."
 
+PartTwo is a scene. PartTwo begins when the player is in the Antechamber. "As you step through the [blast door], the fire alarm shuts off and the door begins to close."
+
 Section 5 - Rules
 
+A person has a number called maximum health. A person has a number called health.
+The maximum health of the player is 100. The health of the player is 100.
+
+Instead of attacking someone: 
+	let the damage be a random number between 2 and 10; 
+	say "You attack [the noun], causing [damage] points of damage!"; 
+	decrease the current hit points of the noun by the damage; 
+	if the current hit points of the noun is less than 0: 
+		say "[line break][The noun] expires, and is immediately carried away by the Arena slaves!"; 
+		now the noun is nowhere; 
+		end the story finally; 
+		stop the action; 
+	let the enemy damage be a random number between 2 and 10; 
+	say "[line break][The noun] attacks you, causing [enemy damage] points of damage!"; 
+	decrease the current hit points of the player by the enemy damage; 
+	if the current hit points of the player is less than 0: 
+		say "[line break]You expire!"; 
+		end the story
+
+Chapter 1 - Entering the Vault
+
+Before looking for the first time, say "As you walk through the vault door, you hear a crackling sound from an unseen speaker above: [quotation mark]Get out! You are unwelcome here. Leave me to my experiments.[quotation mark]. As the buzzing stops, the blast door leading further into the vault closes shut."
 The fire alarm is a truth state that varies. The fire alarm is false.
 Instead of opening the blast door:
 	if the fire alarm is true begin;
-		say "The blast door is wide open.";
+		move the player to the Antechamber;
 	else;
 		say "The blast door is closed shut.";
 	end if;
+
 [Fire alarm puzzle]
 Instead of burning the dusty rag:
 	if the player has the dusty rag and player has the vodka begin;
-		say "You soak the rag in vodka, light it on fire, then hold the rag up to the fire sprinkler. Moments later the fire alarm goes off, and you hear the [blast door] to the inner chamber opening up.";
+		say "You soak the rag in vodka, light it on fire, then hold the rag up to the [fire sprinkler]. Moments later the fire alarm goes off, and you hear the [blast door] open up and reveal an inner chamber to the east.";
 		change the east exit of the Main Tunnel Entrance to the Antechamber;
-		change the west exit of the Antechamber to the Main Tunnel Entrance;
-		The fire alarm is true;
+		[change the west exit of the Antechamber to the Main Tunnel Entrance;]
+		let the fire alarm be true;
 	else if the player has the dusty rag;
 		say "You try to burn the rag, but only the dust burns.";
 	else;
@@ -77,6 +101,7 @@ Instead of drinking the vodka:
 	else;
 		say "You have nothing suitable to drink.";
 	end if;
+	
+Chapter 2 - The Antechamber
 
-Chapter 1 - Entering the Vault
-
+The maximum health of the crazed assailant is 35. The health of the crazed assailant is 35.
