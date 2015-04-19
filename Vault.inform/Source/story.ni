@@ -4,7 +4,11 @@ Section 1 - Rooms
 
 Main Tunnel Entrance is a room. "A large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel]. Next to the [control panel] sits a half-full [bottle of vodka] and a [deck of cards]."  Before looking for the first time, say "As you walk through the vault door, you hear a crackling sound from an unseen speaker above: [quotation mark]Get out! You are unwelcome here. Leave me to my experiments.[quotation mark]. As the buzzing stops, the blast door leading further into the vault closes shut."
 
-Antechamber is east of Main Tunnel Entrance. "You enter an enormous circular chamber with bright fluorescent lights shining down on you."
+[The blast door is east of Main Tunnel Entrance and west of Antechamber. The blast door is a door. The blast door is closed and not openable. The description of it is "A solid metal blast door that someone closed shut when you entered. There has to be some way to open it..."]
+
+The blast door is scenery in the Main Tunnel Entrance. The description of it is "A solid metal blast door that someone closed shut when you entered. There has to be some way to open it..."
+
+Antechamber is a room[east of Main Tunnel Entrance]. "You enter an enormous circular chamber with bright fluorescent lights shining down on you."
 
 Leader's Office is south of Antechamber.
 
@@ -45,3 +49,34 @@ Section 4 - Scenes
 
 [Beginning of the game starts with this scene]
 Introduction is a scene. Introduction begins when play begins. "After the bombs went off, the world became a wasteland where only the strongest and smartest could hope to survive. But over the years, humanity had begun to slowly come back together into scattered remnants of civilizations. As modern technology became a luxury few had, you volunteered to aid in recovering scientific artifacts from before the war. Your search led you to a recently discovered vault rumored to be a nuclear shelter for scientists..."
+
+Section 5 - Rules
+
+The fire alarm is a truth state that varies. The fire alarm is false.
+Instead of opening the blast door:
+	if the fire alarm is true begin;
+		say "The blast door is wide open.";
+	else;
+		say "The blast door is closed shut.";
+	end if;
+[Fire alarm puzzle]
+Instead of burning the dusty rag:
+	if the player has the dusty rag and player has the vodka begin;
+		say "You soak the rag in vodka, light it on fire, then hold the rag up to the fire sprinkler. Moments later the fire alarm goes off, and you hear the [blast door] to the inner chamber opening up.";
+		change the east exit of the Main Tunnel Entrance to the Antechamber;
+		change the west exit of the Antechamber to the Main Tunnel Entrance;
+		The fire alarm is true;
+	else if the player has the dusty rag;
+		say "You try to burn the rag, but only the dust burns.";
+	else;
+		say "You have nothing to burn.";
+	end if;
+Instead of drinking the vodka:
+	if the player has the vodka begin;
+		say "You take a quick swig of the drink.";
+	else;
+		say "You have nothing suitable to drink.";
+	end if;
+
+Chapter 1 - Entering the Vault
+
