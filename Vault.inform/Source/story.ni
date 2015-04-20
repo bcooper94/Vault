@@ -10,9 +10,11 @@ The blast door is scenery in the Main Tunnel Entrance. The description of it is 
 
 Antechamber is a room[east of Main Tunnel Entrance]. "You enter an enormous circular chamber with bright fluorescent lights shining down on you."
 
-Leader's Office is south of Antechamber.
+Scientist's Office is south of Antechamber.
 
-Vault is a region. Main Tunnel Entrance, Antechamber, and Scientist's Office are in Vault.
+The Back Room is south of the Scientist's Office.
+
+Vault is a region. Main Tunnel Entrance, Antechamber, Scientist's Office, and the Back Room are in Vault.
 
 [The description of Antechamber is "[unfinished]."]
 
@@ -57,20 +59,20 @@ A person has a number called maximum health. A person has a number called health
 The maximum health of the player is 100. The health of the player is 100.
 
 Instead of attacking someone: 
-	let the damage be a random number between 2 and 10; 
+	let the damage be a random number between 5 and 10; 
 	say "You attack [the noun], causing [damage] points of damage!"; 
-	decrease the current hit points of the noun by the damage; 
-	if the current hit points of the noun is less than 0: 
-		say "[line break][The noun] expires, and is immediately carried away by the Arena slaves!"; 
+	decrease the health of the noun by the damage; 
+	if the health of the noun is less than 0: 
+		say "[line break][The noun] is killed."; 
 		now the noun is nowhere; 
-		end the story finally; 
 		stop the action; 
 	let the enemy damage be a random number between 2 and 10; 
 	say "[line break][The noun] attacks you, causing [enemy damage] points of damage!"; 
-	decrease the current hit points of the player by the enemy damage; 
-	if the current hit points of the player is less than 0: 
-		say "[line break]You expire!"; 
-		end the story
+	decrease the health of the player by the enemy damage; 
+	if the health of the player is less than 0: 
+		say "[line break]You are killed!"; 
+		
+Definition: a person is alive if its health is greater than 0.
 
 Chapter 1 - Entering the Vault
 
@@ -104,4 +106,16 @@ Instead of drinking the vodka:
 	
 Chapter 2 - The Antechamber
 
-The maximum health of the crazed assailant is 35. The health of the crazed assailant is 35.
+
+
+Chapter 3 - The Office
+
+The scientist is a person inside the scientist's office. The maximum health of the scientist is 35. The health of the scientist is 35. The description of it is "A nervous, frail looking man who appears not to have seen the light of day in years. He appears unarmed."
+
+Chapter 4 - The Back Room
+
+Before going south:
+	If the scientist is alive and the player is in the Scientist's Office begin;
+		say "As you pass through the door into the scientist's back room, he pulls a knife from his boot and slides it between your shoulder blades. [line break]The scientist whispers into your ear, [quotation mark]No one may take my secrets.[quotation mark]";
+		end the story;
+	end if;
