@@ -10,7 +10,7 @@ The blast door is scenery in the Main Tunnel Entrance. The description of it is 
 
 Antechamber is a room[east of Main Tunnel Entrance]. "You enter an enormous circular chamber with bright fluorescent lights shining down on you."
 
-Scientist's Office is south of Antechamber.
+Scientist's Office is south of Antechamber. The description of it is "A dusty lab filled with ragged books and desks littered with papers. In front of one of the desks stands a [scientist]. To the south there is a doorway to another room."
 
 The Back Room is south of the Scientist's Office.
 
@@ -27,6 +27,9 @@ A dusty rag is on the control panel. It is undescribed. The description of it is
 A bottle of vodka is in the Main Tunnel Entrance. The description of it is "A half-full bottle of vodka. The guards had to do something to pass their time..."
 A deck of cards is in the Main Tunnel Entrance. The description of it is "A worn out deck of playing cards."
 A fire sprinkler is in the Main Tunnel Entrance. The description of it is "A fire sprinkler sitting on the low ceiling above."
+
+[Scientist's Office objects]
+A paper-ridden desk is in the Scientist's Office. It is fixed in place. The description of it is "A sturdy desk covered in papers, most of which you probably wouldn't understand."
 
 Section 3 - Player
 
@@ -65,7 +68,7 @@ Instead of attacking someone:
 	if the health of the noun is less than 0: 
 		say "[line break][The noun] is killed."; 
 		now the noun is nowhere; 
-		stop the action; 
+		stop the action;
 	let the enemy damage be a random number between 2 and 10; 
 	say "[line break][The noun] attacks you, causing [enemy damage] points of damage!"; 
 	decrease the health of the player by the enemy damage; 
@@ -73,6 +76,7 @@ Instead of attacking someone:
 		say "[line break]You are killed!"; 
 		
 Definition: a person is alive if its health is greater than 0.
+Definition: a person is hostile if its health is less than its maximum health.
 
 Chapter 1 - Entering the Vault
 
@@ -116,6 +120,9 @@ Chapter 4 - The Back Room
 
 Before going south:
 	If the scientist is alive and the player is in the Scientist's Office begin;
-		say "As you pass through the door into the scientist's back room, he pulls a knife from his boot and slides it between your shoulder blades. [line break]The scientist whispers into your ear, [quotation mark]No one may take my secrets.[quotation mark]";
+		say "As you pass through the door into the scientist's back room, he silently pulls a knife from his boot and slides it between your shoulder blades. [line break]The scientist whispers into your ear, [quotation mark]These secrets are mine and only mine.[quotation mark][line break]You gasp as you feel the life drain from your body.";
 		end the story;
 	end if;
+	
+Instead of telling the scientist hello: say "Hello, ."
+Instead of asking the scientist about himself: say "
