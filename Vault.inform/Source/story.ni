@@ -4,10 +4,6 @@ Section 1 - Rooms
 
 Main Tunnel Entrance is a room. "A large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel]. Next to the [control panel] sits a half-full [bottle of vodka] and a [deck of cards]. Above, you see an old [fire sprinkler]."
 
-[The blast door is east of Main Tunnel Entrance and west of Antechamber. The blast door is a door. The blast door is closed and not openable. The description of it is "A solid metal blast door that someone closed shut when you entered. There has to be some way to open it..."]
-
-The blast door is scenery in the Main Tunnel Entrance. The description of it is "A solid metal blast door that someone closed shut when you entered. There has to be some way to open it..."
-
 Antechamber is a room[east of Main Tunnel Entrance]. "You enter an enormous circular chamber with bright fluorescent lights shining down on you."
 
 Scientist's Office is south of Antechamber. The description of it is "A dusty lab filled with ragged books and desks littered with papers. In front of one of the desks stands a [scientist]. To the south there is a doorway to another room."
@@ -27,6 +23,7 @@ A dusty rag is on the control panel. It is undescribed. The description of it is
 A bottle of vodka is in the Main Tunnel Entrance. The description of it is "A half-full bottle of vodka. The guards had to do something to pass their time..."
 A deck of cards is in the Main Tunnel Entrance. The description of it is "A worn out deck of playing cards."
 A fire sprinkler is in the Main Tunnel Entrance. The description of it is "A fire sprinkler sitting on the low ceiling above."
+The blast door is scenery in the Main Tunnel Entrance. The description of it is "A solid metal blast door that someone closed shut when you entered. There has to be some way to open it..."
 
 [Scientist's Office objects]
 A paper-ridden desk is in the Scientist's Office. It is fixed in place. The description of it is "A sturdy desk covered in papers, most of which you probably wouldn't understand."
@@ -45,6 +42,7 @@ Carry out health:
 	else;
 		say "Your limbs shake as you stumble along.";
 	end if; 
+	say "( your health is [health of the player] out of [maximum health of the player] )";
 [When play begins:]
 	[wait for any key]
 	[move player to Main Tunnel Entrance.]
@@ -90,6 +88,7 @@ Instead of opening the blast door:
 	end if;
 
 [Fire alarm puzzle]
+Understand the command "torch" as "burn".
 Instead of burning the dusty rag:
 	if the player has the dusty rag and player has the vodka begin;
 		say "You soak the rag in vodka, light it on fire, then hold the rag up to the [fire sprinkler]. Moments later the fire alarm goes off, and you hear the [blast door] open up and reveal an inner chamber to the east.";
@@ -114,15 +113,19 @@ Chapter 2 - The Antechamber
 
 Chapter 3 - The Office
 
-The scientist is a person inside the scientist's office. The maximum health of the scientist is 35. The health of the scientist is 35. The description of it is "A nervous, frail looking man who appears not to have seen the light of day in years. He appears unarmed."
+The scientist is a man inside the scientist's office. The maximum health of the scientist is 35. The health of the scientist is 35. The description of it is "A nervous, frail looking man who appears not to have seen the light of day in years. He appears unarmed..."
+
+[Scientist conversations]
+Instead of examining the scientist for the first time: say "A nervous, frail looking man who appears not to have seen the light of day in years. He appears unarmed...[line break]The scientist says, [quotation mark]What? Are you just going to stand there gawking at me?[quotation mark]";
+Instead of asking the scientist about "himself": say "Looking obviously annoyed, the scientist says, [quotation mark]I am a scientist, of course.[quotation mark]";
+Instead of asking the scientist about "vault/the vault": say "The scientist replies, [quotation mark]This place was supposed to be a secret, and you shouldn't be here. Please leave. Now.[quotation mark]";
+Instead of asking the scientist about "here/office": say "The scientist replies, [quotation mark]This is my office. For obvious reasons, I don't conduct my research in this room.[quotation mark]";
+Instead of asking the scientist about "here/office" for at least the second time: say "The scientist agrily replies, [quotation mark]I you already asked me that.[quotation mark]";
 
 Chapter 4 - The Back Room
 
 Before going south:
 	If the scientist is alive and the player is in the Scientist's Office begin;
-		say "As you pass through the door into the scientist's back room, he silently pulls a knife from his boot and slides it between your shoulder blades. [line break]The scientist whispers into your ear, [quotation mark]These secrets are mine and only mine.[quotation mark][line break]You gasp as you feel the life drain from your body.";
+		say "As you pass through the door into the scientist's back room, he silently pulls a knife from his boot and slides it between your shoulder blades. [line break]The scientist whispers into your ear, [quotation mark]You won't be taking my secrets back with you.[quotation mark][line break]You gasp as you feel the life drain from your body.";
 		end the story;
 	end if;
-	
-Instead of telling the scientist hello: say "Hello, ."
-Instead of asking the scientist about himself: say "
