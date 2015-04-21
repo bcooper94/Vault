@@ -2,7 +2,7 @@
 
 Section 1 - Rooms
 
-Main Tunnel Entrance is a room. "A large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel]. Next to the [control panel] sits a half-full [bottle of vodka] and a [deck of cards]. Above, you see an old [fire sprinkler]. To your east is a [blast door]."
+Main Tunnel Entrance is a room. "You walk into a large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel], on top of which is a [dusty rag]. Next to the [control panel] sits a half-full [bottle of vodka] and a [deck of cards]. Above, you see an [fire sprinkler]. To your east is a [blast door]."
 
 Antechamber is a room[east of Main Tunnel Entrance]. "You enter an enormous circular chamber with bright fluorescent lights shining down on you. To the south you see a doorway."
 
@@ -44,19 +44,24 @@ Section 5 - Rules
 A person has a number called maximum health. A person has a number called health.
 The maximum health of the player is 100. The health of the player is 100.
 
+Instead of attacking the player: say "You wouldn't want to do that, would you?"
 Instead of attacking someone: 
-	let the damage be a random number between 5 and 10; 
+	let the damage be a random number between 5 and 10;
 	say "You attack [the noun], causing [damage] points of damage!"; 
 	decrease the health of the noun by the damage; 
 	if the health of the noun is less than 0: 
 		say "[line break][The noun] is killed."; 
-		now the noun is nowhere; 
+		if the noun is not the player:
+			now the noun is nowhere;
+		if the noun is the player:
+			end the story;
 		stop the action;
 	let the enemy damage be a random number between 2 and 10; 
 	say "[line break][The noun] attacks you, causing [enemy damage] points of damage!"; 
 	decrease the health of the player by the enemy damage; 
 	if the health of the player is less than 0: 
-		say "[line break]You are killed!"; 
+		say "[line break]You are killed!";
+		end the story;
 		
 Definition: a person is alive if its health is greater than 0.
 Definition: a person is hostile if its health is less than its maximum health.
@@ -69,9 +74,8 @@ The control panel is scenery in the Main Tunnel Entrance. "A rusty control panel
 A dusty rag is on the control panel. It is undescribed. The description of it is "A dusty rag that one of the guards must have left on the panel. On top of it you spot a [dusty rag]."
 A bottle of vodka is in the Main Tunnel Entrance. The description of it is "A half-full bottle of vodka. The guards had to do something to pass their time..."
 A deck of cards is in the Main Tunnel Entrance. The description of it is "A worn out deck of playing cards."
-A fire sprinkler is in the Main Tunnel Entrance. The description of it is "A fire sprinkler sitting on the low ceiling above."
-The blast door is scenery in the Main Tunnel Entrance. The description of it is "A solid metal blast door that someone closed shut when you entered. There has to be some way to open it..."
-
+An old fire sprinkler is in the Main Tunnel Entrance. The description of it is "A fire sprinkler sitting on the low ceiling above."
+The blast door is scenery in the Main Tunnel Entrance. The description of it is "A solid metal blast door that  closed shut as you entered. There has to be some way to open it up again..."
 
 Before looking for the first time, say "As you walk through the vault door, you hear a crackling sound from an unseen speaker above: [quotation mark]Get out! You are unwelcome here. Leave me to my experiments.[quotation mark]. As the buzzing stops, the blast door leading further into the vault closes shut."
 The fire alarm is a truth state that varies. The fire alarm is false.
@@ -86,7 +90,7 @@ Instead of opening the blast door:
 Understand the command "torch" as "burn".
 Instead of burning the dusty rag:
 	if the player has the dusty rag and player has the vodka begin;
-		say "You soak the rag in vodka, light it on fire, then hold the rag up to the [fire sprinkler]. Moments later the fire alarm goes off, and to your east you hear the [blast door] open up and reveal an inner chamber to the east.";
+		say "You soak the rag in vodka, light it on fire, then hold the rag up to the [fire sprinkler]. Moments later the fire alarm goes off, and you hear the [blast door] open up and reveal an inner chamber to the east.";
 		change the east exit of the Main Tunnel Entrance to the Antechamber;
 		[change the west exit of the Antechamber to the Main Tunnel Entrance;]
 		let the fire alarm be true;
@@ -102,20 +106,26 @@ Instead of drinking the vodka:
 		say "You have nothing suitable to drink.";
 	end if;
 	
+Instead of burning the vodka:
+	say "That would probably end in you lighting yourself on fire.";
+	if the player has the dusty rag begin;
+		say "Maybe the rag would be a safe alternative...";
+	end if;
+	
 Chapter 2 - The Antechamber
 
-
+The security guard is a person inside the Antechamber. The maximum health of the security guard is 40. The health of the security guard is 40. The description of it is "An angry guard intent on killing you. Fortunately, he is only only armed with a night stick."
 
 Chapter 3 - The Office
 
 [Scientist's Office objects]
-A paper-ridden desk is in the Scientist's Office. It is fixed in place. The description of it is "A sturdy desk covered in papers, most of which you probably wouldn't understand."
+A paper-ridden desk is in the Scientist's Office. It is fixed in place. The description of it is "A sturdy desk covered in papers, most of which you probably wouldn't understand. Behind the desk stands a [scientist], coldly staring you down."
 
 [Scientist]
-The scientist is a man inside the scientist's office. The maximum health of the scientist is 35. The health of the scientist is 35. The description of it is "A nervous, frail looking man who appears not to have seen the light of day in years. He appears unarmed..."
+The scientist is a man inside the scientist's office. The maximum health of the scientist is 35. The health of the scientist is 35. The description of it is "A nervous, looking man who appears not to have seen the light of day in years. His hands appear to be shaking, but he appears unarmed..."
 
 [Scientist conversations]
-Instead of examining the scientist for the first time: say "A nervous, frail looking man who appears not to have seen the light of day in years. He appears unarmed...[line break][line break]The scientist says, [quotation mark]What? Are you just going to stand there gawking at me?[quotation mark][line break](You can ask him about himself, the vault, or the office.)";
+Instead of examining the scientist for the first time: say "A nervous looking man who appears not to have seen the light of day in years. His hands appear to be shaking, but he appears unarmed...[line break][line break]The scientist says, [quotation mark]What? Are you just going to stand there gawking at me?[quotation mark][line break](You can ask him about himself, the vault, or the office.)";
 Instead of asking the scientist about "himself": say "Looking obviously annoyed, the scientist says, [quotation mark]I am a scientist, of course.[quotation mark]";
 Instead of asking the scientist about "himself" for at least the second time: say "The scientist stares you down. [quotation mark]Maybe you should leave.[quotation mark]";
 Instead of asking the scientist about "vault/the vault": say "The scientist replies, [quotation mark]This place was supposed to be a secret, and you shouldn't be here. Please leave. Now.[quotation mark]";
