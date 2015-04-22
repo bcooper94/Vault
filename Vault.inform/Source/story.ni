@@ -2,9 +2,9 @@
 
 Section 1 - Rooms
 
-Main Tunnel Entrance is a room. "You walk into a large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel], on top of which is a [dusty rag]. Next to the [control panel] sits a half-full [bottle of vodka] and a [deck of cards]. Above, you see an [fire sprinkler]. To your east is a [blast door]."
+Main Tunnel Entrance is a room. "You walk into a large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel], on top of which is a [dusty rag]. Next to the [control panel] sits a half-full [bottle of vodka] and a [deck of cards]. Above, you see an [fire sprinkler]. To your east is a closed [blast door]."
 
-Antechamber is a room[east of Main Tunnel Entrance]. "You enter an enormous circular chamber with bright fluorescent lights shining down on you. To the south you see a doorway."
+Antechamber is a room. "You enter an enormous circular chamber with bright fluorescent lights shining down on you. Against one wall you spot a [small bookcase]. On top of the [small bookcase] you see what looks like a [first aid kit]. To the south you see a doorway."
 
 Scientist's Office is south of Antechamber. The description of it is "A dusty room filled with ragged books and desks littered with papers. In front of one of the desks stands a [scientist]. To the south there is a doorway to another room."
 
@@ -21,17 +21,26 @@ Instead of examining the player: say "You feel unprepared for what you might fin
 The player is in Main Tunnel Entrance. The player carries a lighter and a combat knife.
 Health is an action applying to nothing. Understand "health" as health.
 Carry out health:
-	if the health of the player > 90 begin;
+	if the health of the player > 80 begin;
 		say "You're in good health.";
-	else if the health of the player > 75;
-		say "You are beginning to feel nauseous.";
-	else if the health of the player > 50;
+	else if the health of the player > 60;
+		say "You are beginning to feel weary.";
+	else if the health of the player > 40;
 		say "You feel tired and dizzy. You should probably see a doctor";
 	else;
-		say "Your limbs shake as you stumble along.";
+		say "Your limbs shake as you stumble along. Find a doctor soon!";
 	end if; 
 	say "( Your health is [health of the player] out of [maximum health of the player] )";
-	
+
+Using is an action applying to a thing. Understand "use [something]" as using.
+Instead of using a first aid kit:
+	if the health of the player is less than 60 begin;
+		increase the health of the player by 40;
+	else;
+		increase the health of the player by maximum health of the player - health of the player;
+	end if;
+	say "You use the first aid kit, healing you to [health of the player] health.";
+
 Section 4 - Scenes
 
 [Beginning of the game starts with this scene]
@@ -39,7 +48,7 @@ Introduction is a scene. Introduction begins when play begins. "After the bombs 
 
 PartTwo is a scene. PartTwo begins when the player is in the Antechamber. "As you step through the [blast door], the fire alarm shuts off and the door begins to close.[line break][line break]An armed [security guard] rushes toward you, lashing out with his night stick. You see his strike just in time to step back and avoid the blow."
 
-Flashback is a scene. Flashback begins when the player has the dusty book. "Stuff happened. blah blah."
+Flashback is a scene. Flashback begins when the player has the dusty book. "[line break]Skimming over the first few pages of this history text, you are reminded of life before the war. You picture actual green grass, trees, and flowers. A life not plagued by radiation; a life where every day is not a battle against the elements. You suddenly snap back to reality as you hear a thump coming from the room to the south."
 
 Section 5 - Rules
 
@@ -73,9 +82,9 @@ Chapter 1 - Entering the Vault
 [Main Tunnel Entrance objects]
 The vault door is scenery in the Main Tunnel Entrance. It is fixed in place. "A massive, weathered lead door. It may have withstood the war, but it has definitely seen better days."
 The control panel is scenery in the Main Tunnel Entrance. "A rusty control panel probably used to open [the vault door]. It doesn't seem to be working now." It is fixed in place and undescribed. It is a supporter. [On the rusty control panel is a key card. It is undescribed. "This key card has to open something..."]
-A dusty rag is on the control panel. It is undescribed. The description of it is "A dusty rag that one of the guards must have left on the panel."
-A bottle of vodka is a thing in the Main Tunnel Entrance. The description of it is "A half-full bottle of vodka. The guards had to do something to pass their time..."
-A deck of cards is in the Main Tunnel Entrance. The description of it is "A worn out deck of playing cards."
+A dusty rag is on the control panel. It is undescribed. The description of it is "A dusty rag that one of the guards must have left on the panel.[line break]( Options: take, burn.)"
+A bottle of vodka is a thing in the Main Tunnel Entrance. The description of it is "A half-full bottle of vodka. The guards had to do something to pass their time...[line break]( Options: take, drink, burn.)"
+A deck of cards is in the Main Tunnel Entrance. The description of it is "A worn out deck of playing cards.[line break]( Options: take.)"
 An old fire sprinkler is in the Main Tunnel Entrance. The description of it is "A fire sprinkler sitting on the low ceiling above."
 The blast door is scenery in the Main Tunnel Entrance. The description of it is "A solid metal blast door that  closed shut as you entered. There has to be some way to open it up again..."
 
@@ -97,7 +106,7 @@ Instead of burning the dusty rag:
 		[change the west exit of the Antechamber to the Main Tunnel Entrance;]
 		let the fire alarm be true;
 	else if the player has the dusty rag;
-		say "You try to burn the rag, but only the dust burns.";
+		say "You try to burn the rag, but only the dust burns. Maybe it would light if you had some fuel...";
 	else;
 		say "You have nothing to burn.";
 	end if;
@@ -109,21 +118,28 @@ Instead of drinking the vodka:
 	end if;
 	
 Instead of burning the vodka:
-	say "That would probably end in you lighting yourself on fire.";
-	if the player has the dusty rag begin;
-		say "Maybe the rag would be a safe alternative...";
+	if the player does not have the bottle of vodka begin;
+		say "You have nothing to burn.";
+	else;
+		if the player does not have the dusty rag begin;
+			say "That would probably end in you lighting yourself on fire. Maybe there is a safer alternative...";
+		else;
+			say "Maybe the rag would be a safe alternative...";
+		end if;
 	end if;
 	
 Chapter 2 - The Antechamber
 
 The security guard is a person inside the Antechamber. It is undescribed. The maximum health of the security guard is 40. The health of the security guard is 40. The description of it is "An angry guard intent on killing you. Fortunately, he is only only armed with a night stick."
 A small bookcase is in the Antechamber. It is fixed in place. The description of it is "A worn out bookshelf resting against the far wall of the chamber. Most of the books are illegible from age and lack of care, but one [dusty book] stands out to you."
-A dusty book is in the Antechamber. The description of it is "An old history book detailing events before the war."
+A dusty book is in the Antechamber. The description of it is "An old history book detailing events before the war.[line break]( Options: take.)"
+A first aid kit is on the small bookcase.
 
 Instead of examining the dusty book:
+	let the enemy damage be a random number between 5 and 15;
 	if the security guard is alive begin;
 		say "You should probably worry about the [security guard] attacking you first.";
-		say "[line break]The [securyt guard] takes advantage of  attacks you, causing [enemy damage] points of damage!"; 
+		say "[line break]While your back is turned, the [security guard] attacks you from behind, causing [enemy damage] points of damage!"; 
 		decrease the health of the player by the enemy damage; 
 		if the health of the player is less than 0 begin;
 			say "[line break]You are killed!";
@@ -133,10 +149,10 @@ Instead of examining the dusty book:
 		try taking the dusty book;
 	end if;
 Instead of taking the dusty book for at most the tenth time:
-	let the enemy damage be a random number between 2 and 10;
+	let the enemy damage be a random number between 5 and 15;
 	if the security guard is alive begin;
 		say "You should probably worry about the [security guard] attacking you first.";
-		say "[line break]The [securyt guard] takes advantage of  attacks you, causing [enemy damage] points of damage!"; 
+		say "[line break]While your back is turned, the [security guard] attacks you from behind, causing [enemy damage] points of damage!"; 
 		decrease the health of the player by the enemy damage; 
 		if the health of the player is less than 0 begin;
 			say "[line break]You are killed!";
@@ -144,6 +160,13 @@ Instead of taking the dusty book for at most the tenth time:
 		end if;
 	else if the player does not have the dusty book;
 		try taking the dusty book;
+	end if;
+
+Instead of going south for at most the tenth time:
+	if the security guard is alive and the player is in the Antechamber begin;
+		say "The [security guard] blocks your path.";
+	else;
+		try going south;
 	end if;
 
 Chapter 3 - The Office
