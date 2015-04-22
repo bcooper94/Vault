@@ -37,7 +37,7 @@ Section 4 - Scenes
 [Beginning of the game starts with this scene]
 Introduction is a scene. Introduction begins when play begins. "After the bombs went off, the world became a wasteland where only the strongest and smartest could hope to survive. But over the years, humanity had begun to slowly come back together into scattered remnants of civilizations. As modern technology became a luxury few had, you volunteered to aid in recovering scientific artifacts from before the war. Your search led you to a recently discovered vault rumored to be a nuclear shelter for scientists..."
 
-PartTwo is a scene. PartTwo begins when the player is in the Antechamber. "As you step through the [blast door], the fire alarm shuts off and the door begins to close."
+PartTwo is a scene. PartTwo begins when the player is in the Antechamber. "As you step through the [blast door], the fire alarm shuts off and the door begins to close.[line break][line break]An armed [security guard] rushes toward you, lashing out with his night stick. You see his strike just in time to step back and avoid the blow."
 
 Section 5 - Rules
 
@@ -71,8 +71,8 @@ Chapter 1 - Entering the Vault
 [Main Tunnel Entrance objects]
 The vault door is scenery in the Main Tunnel Entrance. It is fixed in place. "A massive, weathered lead door. It may have withstood the war, but it has definitely seen better days."
 The control panel is scenery in the Main Tunnel Entrance. "A rusty control panel probably used to open [the vault door]. It doesn't seem to be working now." It is fixed in place and undescribed. It is a supporter. [On the rusty control panel is a key card. It is undescribed. "This key card has to open something..."]
-A dusty rag is on the control panel. It is undescribed. The description of it is "A dusty rag that one of the guards must have left on the panel. On top of it you spot a [dusty rag]."
-A bottle of vodka is in the Main Tunnel Entrance. The description of it is "A half-full bottle of vodka. The guards had to do something to pass their time..."
+A dusty rag is on the control panel. It is undescribed. The description of it is "A dusty rag that one of the guards must have left on the panel."
+A bottle of vodka is a thing in the Main Tunnel Entrance. The description of it is "A half-full bottle of vodka. The guards had to do something to pass their time..."
 A deck of cards is in the Main Tunnel Entrance. The description of it is "A worn out deck of playing cards."
 An old fire sprinkler is in the Main Tunnel Entrance. The description of it is "A fire sprinkler sitting on the low ceiling above."
 The blast door is scenery in the Main Tunnel Entrance. The description of it is "A solid metal blast door that  closed shut as you entered. There has to be some way to open it up again..."
@@ -114,7 +114,7 @@ Instead of burning the vodka:
 	
 Chapter 2 - The Antechamber
 
-The security guard is a person inside the Antechamber. The maximum health of the security guard is 40. The health of the security guard is 40. The description of it is "An angry guard intent on killing you. Fortunately, he is only only armed with a night stick."
+The security guard is a person inside the Antechamber. It is undescribed. The maximum health of the security guard is 40. The health of the security guard is 40. The description of it is "An angry guard intent on killing you. Fortunately, he is only only armed with a night stick."
 
 Chapter 3 - The Office
 
@@ -122,10 +122,10 @@ Chapter 3 - The Office
 A paper-ridden desk is in the Scientist's Office. It is fixed in place. The description of it is "A sturdy desk covered in papers, most of which you probably wouldn't understand. Behind the desk stands a [scientist], coldly staring you down."
 
 [Scientist]
-The scientist is a man inside the scientist's office. The maximum health of the scientist is 35. The health of the scientist is 35. The description of it is "A nervous, looking man who appears not to have seen the light of day in years. His hands appear to be shaking, but he appears unarmed..."
+The scientist is a man inside the scientist's office. The maximum health of the scientist is 35. The health of the scientist is 35. The description of it is "A nervous, looking man who appears not to have seen the light of day in years. You notice that his hands are shaking, but he appears unarmed..."
 
 [Scientist conversations]
-Instead of examining the scientist for the first time: say "A nervous looking man who appears not to have seen the light of day in years. His hands appear to be shaking, but he appears unarmed...[line break][line break]The scientist says, [quotation mark]What? Are you just going to stand there gawking at me?[quotation mark][line break](You can ask him about himself, the vault, or the office.)";
+Instead of examining the scientist for the first time: say "A nervous looking man who appears not to have seen the light of day in years. His hands appear to be shaking, but he appears unarmed...[line break][line break]The scientist says, [quotation mark]What? Are you just going to stand there gawking at me?[quotation mark][line break](You can ask him about himself, the office, or the vault.)";
 Instead of asking the scientist about "himself": say "Looking obviously annoyed, the scientist says, [quotation mark]I am a scientist, of course.[quotation mark]";
 Instead of asking the scientist about "himself" for at least the second time: say "The scientist stares you down. [quotation mark]Maybe you should leave.[quotation mark]";
 Instead of asking the scientist about "vault/the vault": say "The scientist replies, [quotation mark]This place was supposed to be a secret, and you shouldn't be here. Please leave. Now.[quotation mark]";
