@@ -4,7 +4,7 @@ Section 1 - Rooms
 
 Main Tunnel Entrance is a room. "You walk into a large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel], on top of which is a [dusty rag]. Next to the [control panel] sits rather [drunk guard], with a half-full [bottle of vodka] and a [deck of cards] beside him. Above, you see an [fire sprinkler]. To your east is a closed [blast door]."
 
-Antechamber is a room. "You enter an enormous circular chamber with bright fluorescent lights shining down on you. Against one wall you spot a [small bookcase].[if first aid kit is in the Antechamber] On top of the [small bookcase] you see what looks like a [first aid kit].[end if] To the south you see a doorway."
+Antechamber is a room. "You enter an enormous circular chamber with bright fluorescent lights shining down on you. Against one wall you spot a [small bookshelf].[if first aid kit is in the Antechamber] On top of the [small bookshelf] you see what looks like a [first aid kit].[end if] To the south you see a doorway."
 
 Scientist's Office is south of Antechamber. The description of it is "A dusty room filled with ragged books and desks littered with papers. In front of one of the desks stands a [scientist]. To the south there is a doorway to another room."
 
@@ -49,7 +49,7 @@ Section 4 - Scenes
 [Beginning of the game starts with this scene]
 Introduction is a scene. Introduction begins when play begins. "After the bombs went off, the world became a wasteland where only the strongest and smartest could hope to survive. But over the years, humanity had begun to slowly come back together into scattered remnants of civilizations. As modern technology became a luxury few had, you volunteered to aid in recovering scientific artifacts from before the war. Your search led you to a recently discovered vault rumored to be a nuclear shelter for scientists..."
 
-PartTwo is a scene. PartTwo begins when the player is in the Antechamber. "As you step through the [blast door], the fire alarm shuts off and the door begins to close.[line break][line break]An armed [security guard] rushes toward you, lashing out with his night stick. You see his strike just in time to step back and avoid the blow."
+PartTwo is a scene. PartTwo begins when the player is in the Antechamber. "As you step through the [blast door], the fire alarm shuts off and  an armed [security guard] rushes toward you, lashing out with his night stick. You see his strike just in time to step back and avoid the blow."
 
 Flashback is a scene. Flashback begins when the player has the dusty book. "[line break]Skimming over the first few pages of this history text, you are reminded of life before the war. You picture actual green grass, trees, and flowers. A life not plagued by radiation; a life where every day is not a battle against the elements. You suddenly snap back to reality as you hear a thump coming from the room to the south."
 
@@ -86,21 +86,21 @@ Chapter 1 - Entering the Vault
 The vault door is scenery in the Main Tunnel Entrance. It is fixed in place. "A massive, weathered lead door. It may have withstood the war, but it has definitely seen better days."
 The control panel is scenery in the Main Tunnel Entrance. "A rusty control panel probably used to open [the vault door]. It doesn't seem to be working now." It is fixed in place and undescribed. It is a supporter. [On the rusty control panel is a key card. It is undescribed. "This key card has to open something..."]
 A dusty rag is on the control panel. It is undescribed. The description of it is "A dusty rag that one of the guards must have left on the panel.[line break]( Options: take, burn.)"
-A bottle of vodka is a thing in the Main Tunnel Entrance. The description of it is "A half-full bottle of vodka. The guards had to do something to pass their time...[line break]( Options: take, drink, burn.)"
+A bottle of vodka is a thing in the Main Tunnel Entrance. The description of it is "A half-full bottle of vodka. The guard had to do something to pass his time...[line break]( Options: take, drink, burn.)"
 A deck of cards is in the Main Tunnel Entrance. The description of it is "A worn out deck of playing cards.[line break]( Options: take.)"
-An old fire sprinkler is in the Main Tunnel Entrance. The description of it is "A fire sprinkler sitting on the low ceiling above."
+An old fire sprinkler is in the Main Tunnel Entrance. The description of it is "A fire sprinkler sitting on the low ceiling above. As your eyes trace down the walls from the fire sprinkler, you notice a red warning plaque on the wall: [quotation mark]In the event of a fire, all personnel are to exit the facility immediately. All blast doors will open automatically to ensure the safety of all employees.[quotation mark]".
 The blast door is scenery in the Main Tunnel Entrance. The description of it is "A solid metal blast door that  closed shut as you entered. There has to be some way to open it up again..."
 
 [Drunk guard and his responses]
 A drunk guard is a person in the Main Tunnel Entrance. The description of it is "A rather inebriated person. It seems that they won't be trying to stop you from waltzing through their vault any time soon.[line break](You can ask him about himself, the vodka, or the vault.)"
 
-Instead of asking the drunk guard about "himself": say "[quotation mark]I'm just here to keep that dumb ol' scientist out of trouble. The job doesn't exactly pay, but it has its perks,[quotation mark] the guard says as he motions toward the [bottle of vodka].";
-Instead of asking the drunk guard about "the vodka/vodka": say "The guard says, [quotation mark]I swear it drank itself...[quotation mark]";
-Instead of asking the drunk guard about "the vault/here": say "The guard says, [quotation mark]This is my home. I keep the scientist alive and .[quotation mark]";
+Instead of asking the drunk guard about "himself": say "[quotation mark]I'm just here to keep that dumb ol scientist out of trouble. The job doesn't exactly pay, but it has its perks,[quotation mark] the guard says as he motions toward the [bottle of vodka].";
+Instead of asking the drunk guard about "the vodka/vodka": say "[quotation mark]I swear it drank itself...[quotation mark] the guard mumbles.";
+Instead of asking the drunk guard about "the vault/here": say "The guard says, [quotation mark]This is my home. I keep the scientist alive and we all have a place to live.[quotation mark]";
 
 Instead of attacking the drunk guard: say "Now why would you attack a harmless drunk?";
 
-Before looking for the first time, say "As you walk through the vault door, you hear a crackling sound from an unseen speaker above: [quotation mark]Get out! You are unwelcome here. Leave me to my experiments.[quotation mark]. As the buzzing stops, the blast door leading further into the vault closes shut."
+After looking for the first time, say "As you walk through the vault door, you hear a crackling sound from an unseen speaker above: [quotation mark]Get out! You are unwelcome here. Leave me to my experiments.[quotation mark]. As the buzzing stops, the blast door leading further into the vault closes shut.[line break][line break](Hint: type [quotation mark]health[quotation mark] to view your health status.)"
 The fire alarm is a truth state that varies. The fire alarm is false.
 Instead of opening the blast door:
 	if the fire alarm is true begin;
@@ -115,7 +115,6 @@ Instead of burning the dusty rag:
 	if the player has the dusty rag and player has the vodka begin;
 		say "You soak the rag in vodka, light it on fire, then hold the rag up to the [fire sprinkler]. Moments later the fire alarm goes off, and you hear the [blast door] open up and reveal an inner chamber to the east.";
 		change the east exit of the Main Tunnel Entrance to the Antechamber;
-		[change the west exit of the Antechamber to the Main Tunnel Entrance;]
 		let the fire alarm be true;
 	else if the player has the dusty rag;
 		say "You try to burn the rag, but only the dust burns. Maybe it would light if you had some fuel...";
@@ -143,9 +142,9 @@ Instead of burning the vodka:
 Chapter 2 - The Antechamber
 
 The security guard is a person inside the Antechamber. It is undescribed. The maximum health of the security guard is 40. The health of the security guard is 40. The description of it is "An angry guard intent on killing you. Fortunately, he is only only armed with a night stick."
-A small bookcase is in the Antechamber. It is fixed in place. The description of it is "A worn out bookshelf resting against the far wall of the chamber. Most of the books are illegible from age and lack of care, but one [dusty book] stands out to you."
+A small bookshelf is in the Antechamber. It is fixed in place. The description of it is "A worn out bookshelf resting against the far wall of the chamber. Most of the books are illegible from age and lack of care, but one [dusty book] stands out to you."
 A dusty book is in the Antechamber. It is undescribed. The description of it is "An old history book detailing events before the war.[line break]( Options: take.)"
-A first aid kit is on the small bookcase. The description of it is "A healing item.[line break]( Options: take, use.)"
+A first aid kit is on the small bookshelf. The description of it is "A healing item.[line break]( Options: take, use.)"
 
 Instead of examining the dusty book:
 	let the enemy damage be a random number between 5 and 15;
