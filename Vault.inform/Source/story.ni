@@ -39,6 +39,8 @@ Introduction is a scene. Introduction begins when play begins. "After the bombs 
 
 PartTwo is a scene. PartTwo begins when the player is in the Antechamber. "As you step through the [blast door], the fire alarm shuts off and the door begins to close.[line break][line break]An armed [security guard] rushes toward you, lashing out with his night stick. You see his strike just in time to step back and avoid the blow."
 
+Flashback is a scene. Flashback begins when the player has the dusty book. "Stuff happened. blah blah."
+
 Section 5 - Rules
 
 A person has a number called maximum health. A person has a number called health.
@@ -115,6 +117,34 @@ Instead of burning the vodka:
 Chapter 2 - The Antechamber
 
 The security guard is a person inside the Antechamber. It is undescribed. The maximum health of the security guard is 40. The health of the security guard is 40. The description of it is "An angry guard intent on killing you. Fortunately, he is only only armed with a night stick."
+A small bookcase is in the Antechamber. It is fixed in place. The description of it is "A worn out bookshelf resting against the far wall of the chamber. Most of the books are illegible from age and lack of care, but one [dusty book] stands out to you."
+A dusty book is in the Antechamber. The description of it is "An old history book detailing events before the war."
+
+Instead of examining the dusty book:
+	if the security guard is alive begin;
+		say "You should probably worry about the [security guard] attacking you first.";
+		say "[line break]The [securyt guard] takes advantage of  attacks you, causing [enemy damage] points of damage!"; 
+		decrease the health of the player by the enemy damage; 
+		if the health of the player is less than 0 begin;
+			say "[line break]You are killed!";
+			end the story;
+		end if;
+	else;
+		try taking the dusty book;
+	end if;
+Instead of taking the dusty book for at most the tenth time:
+	let the enemy damage be a random number between 2 and 10;
+	if the security guard is alive begin;
+		say "You should probably worry about the [security guard] attacking you first.";
+		say "[line break]The [securyt guard] takes advantage of  attacks you, causing [enemy damage] points of damage!"; 
+		decrease the health of the player by the enemy damage; 
+		if the health of the player is less than 0 begin;
+			say "[line break]You are killed!";
+			end the story;
+		end if;
+	else if the player does not have the dusty book;
+		try taking the dusty book;
+	end if;
 
 Chapter 3 - The Office
 
@@ -142,3 +172,6 @@ Before going south:
 	
 The file is in the Back Room. The description of it is "A thick file marked top secret."
 The computer is in the Back Room. It is fixed in place. The description of it is "An old computer used for the scientist's experiments. You haven't seen one of these in a long time."
+Instead of taking the file:
+	say ".";
+	end the story;
