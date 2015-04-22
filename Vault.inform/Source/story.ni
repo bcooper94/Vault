@@ -91,7 +91,14 @@ A deck of cards is in the Main Tunnel Entrance. The description of it is "A worn
 An old fire sprinkler is in the Main Tunnel Entrance. The description of it is "A fire sprinkler sitting on the low ceiling above."
 The blast door is scenery in the Main Tunnel Entrance. The description of it is "A solid metal blast door that  closed shut as you entered. There has to be some way to open it up again..."
 
-A drunk guard is a person in the Main Tunnel Entrance. The description of it is "A rather inebriated person. It seems that they won't be trying to stop you from waltzing through their vault any time soon."
+[Drunk guard and his responses]
+A drunk guard is a person in the Main Tunnel Entrance. The description of it is "A rather inebriated person. It seems that they won't be trying to stop you from waltzing through their vault any time soon.[line break](You can ask him about himself, the vodka, or the vault.)"
+
+Instead of asking the drunk guard about "himself": say "[quotation mark]I'm just here to keep that dumb ol' scientist out of trouble. The job doesn't exactly pay, but it has its perks,[quotation mark] the guard says as he motions toward the [bottle of vodka].";
+Instead of asking the drunk guard about "the vodka/vodka": say "The guard says, [quotation mark]I swear it drank itself...[quotation mark]";
+Instead of asking the drunk guard about "the vault/here": say "The guard says, [quotation mark]This is my home. I keep the scientist alive and .[quotation mark]";
+
+Instead of attacking the drunk guard: say "Now why would you attack a harmless drunk?";
 
 Before looking for the first time, say "As you walk through the vault door, you hear a crackling sound from an unseen speaker above: [quotation mark]Get out! You are unwelcome here. Leave me to my experiments.[quotation mark]. As the buzzing stops, the blast door leading further into the vault closes shut."
 The fire alarm is a truth state that varies. The fire alarm is false.
