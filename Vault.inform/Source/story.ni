@@ -2,17 +2,15 @@
 
 Section 1 - Rooms
 
-Main Tunnel Entrance is a room. "You walk into a large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel], on top of which is a [dusty rag]. Next to the [control panel] sits a half-full [bottle of vodka] and a [deck of cards]. Above, you see an [fire sprinkler]. To your east is a closed [blast door]."
+Main Tunnel Entrance is a room. "You walk into a large, dusty interior, dimly lit by narrow sunshafts entering through [the vault door]. Next to the door lies a [control panel], on top of which is a [dusty rag]. Next to the [control panel] sits rather [drunk guard], with a half-full [bottle of vodka] and a [deck of cards] beside him. Above, you see an [fire sprinkler]. To your east is a closed [blast door]."
 
-Antechamber is a room. "You enter an enormous circular chamber with bright fluorescent lights shining down on you. Against one wall you spot a [small bookcase]. On top of the [small bookcase] you see what looks like a [first aid kit]. To the south you see a doorway."
+Antechamber is a room. "You enter an enormous circular chamber with bright fluorescent lights shining down on you. Against one wall you spot a [small bookcase].[if first aid kit is in the Antechamber] On top of the [small bookcase] you see what looks like a [first aid kit].[end if] To the south you see a doorway."
 
 Scientist's Office is south of Antechamber. The description of it is "A dusty room filled with ragged books and desks littered with papers. In front of one of the desks stands a [scientist]. To the south there is a doorway to another room."
 
 The Back Room is south of the Scientist's Office. The description of it is "A well-lit lab with a single working [computer]. Next to the [computer] is a single [file] labeled top secret."
 
 Vault is a region. Main Tunnel Entrance, Antechamber, Scientist's Office, and the Back Room are in Vault.
-
-[The description of Antechamber is "[unfinished]."]
 
 Section 3 - Player
 
@@ -34,12 +32,17 @@ Carry out health:
 
 Using is an action applying to a thing. Understand "use [something]" as using.
 Instead of using a first aid kit:
-	if the health of the player is less than 60 begin;
-		increase the health of the player by 40;
+	if the player has the first aid kit begin;
+		if the health of the player is less than 60 begin;
+			increase the health of the player by 40;
+		else;
+			increase the health of the player by maximum health of the player - health of the player;
+		end if;
+		say "You use the first aid kit, healing you to [health of the player] health.";
+		now the first aid kit is nowhere;
 	else;
-		increase the health of the player by maximum health of the player - health of the player;
+		say "You don't have a first aid kit.";
 	end if;
-	say "You use the first aid kit, healing you to [health of the player] health.";
 
 Section 4 - Scenes
 
@@ -88,6 +91,8 @@ A deck of cards is in the Main Tunnel Entrance. The description of it is "A worn
 An old fire sprinkler is in the Main Tunnel Entrance. The description of it is "A fire sprinkler sitting on the low ceiling above."
 The blast door is scenery in the Main Tunnel Entrance. The description of it is "A solid metal blast door that  closed shut as you entered. There has to be some way to open it up again..."
 
+A drunk guard is a person in the Main Tunnel Entrance. The description of it is "A rather inebriated person. It seems that they won't be trying to stop you from waltzing through their vault any time soon."
+
 Before looking for the first time, say "As you walk through the vault door, you hear a crackling sound from an unseen speaker above: [quotation mark]Get out! You are unwelcome here. Leave me to my experiments.[quotation mark]. As the buzzing stops, the blast door leading further into the vault closes shut."
 The fire alarm is a truth state that varies. The fire alarm is false.
 Instead of opening the blast door:
@@ -132,8 +137,8 @@ Chapter 2 - The Antechamber
 
 The security guard is a person inside the Antechamber. It is undescribed. The maximum health of the security guard is 40. The health of the security guard is 40. The description of it is "An angry guard intent on killing you. Fortunately, he is only only armed with a night stick."
 A small bookcase is in the Antechamber. It is fixed in place. The description of it is "A worn out bookshelf resting against the far wall of the chamber. Most of the books are illegible from age and lack of care, but one [dusty book] stands out to you."
-A dusty book is in the Antechamber. The description of it is "An old history book detailing events before the war.[line break]( Options: take.)"
-A first aid kit is on the small bookcase.
+A dusty book is in the Antechamber. It is undescribed. The description of it is "An old history book detailing events before the war.[line break]( Options: take.)"
+A first aid kit is on the small bookcase. The description of it is "A healing item.[line break]( Options: take, use.)"
 
 Instead of examining the dusty book:
 	let the enemy damage be a random number between 5 and 15;
@@ -196,5 +201,5 @@ Before going south:
 The file is in the Back Room. The description of it is "A thick file marked top secret."
 The computer is in the Back Room. It is fixed in place. The description of it is "An old computer used for the scientist's experiments. You haven't seen one of these in a long time."
 Instead of taking the file:
-	say ".";
+	say "You glance over the contents of the file, finding detailed schematics for many pre-war medical devices. You decide that this is exactly what you were looking for and quickly make your way toward the entrance, so as to avoid running into any other psychotic scientists.";
 	end the story;
